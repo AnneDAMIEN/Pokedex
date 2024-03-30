@@ -2,14 +2,21 @@ import PropTypes from "prop-types";
 
 
 function PokemonCard ({pokemon}) {
+
+   /*const handleClick = () => {
+      setCount(count + 1)
+   }*/
+
  return (
 
+   <div>
  <figure>
     {pokemon.imgSrc === undefined ? <p>???</p> : <img src= {pokemon.imgSrc}/>}
-    
     <figcaption>{pokemon.name}</figcaption>
- </figure>
-    )
+    </figure>
+   </div>
+
+);
 }
 
 PokemonCard.propTypes = {
@@ -20,7 +27,6 @@ PokemonCard.propTypes = {
 
 }  
 
-console.log(PokemonCard);
 
 
 export default PokemonCard;
