@@ -1,22 +1,17 @@
 function NavBar({ pokemonIndex, setPokemonIndex, pokemonList }) {
+  const buttonPokemon = (index) => {
+    setPokemonIndex(index);
+  };
+
   return (
     <div>
-      <button
-        onClick={() => setPokemonIndex(pokemonIndex - 1)}
-        style={{ visibility: pokemonIndex > 0 ? "visible" : "hidden" }}
-      >
-        Précédent
-      </button>
-      {pokemonIndex}
-      <button
-        onClick={() => setPokemonIndex(pokemonIndex + 1)}
-        style={{
-          visibility:
-            pokemonIndex < pokemonList.length - 1 ? "visible" : "hidden",
-        }}
-      >
-        Suivant
-      </button>
+      <h1>Boutons Pokemon</h1>
+      {pokemonList.map((p, index) => (
+        <button key={p.myName} onClick={() => buttonPokemon(index)}>
+          {p.myName}
+          {p.name}
+        </button>
+      ))}
     </div>
   );
 }
